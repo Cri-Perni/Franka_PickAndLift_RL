@@ -201,7 +201,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Stable-Baselines3** for the PPO implementation
 - **Genesis** for high-performance physics simulation
 - **OpenAI Gymnasium** for the RL environment interface
-
-## 📬 Contact
-
-For questions or issues, please open an issue on GitHub or contact [your-email@example.com].
