@@ -151,7 +151,7 @@ def main():
     
     try:
         model.learn(
-            total_timesteps=24_000_000, 
+            total_timesteps=6_000_000, 
             callback=checkpoint_callback, 
             reset_num_timesteps=reset_timesteps
         )
