@@ -83,7 +83,7 @@ You'll be prompted to choose:
 Key hyperparameters (in `train.py`):
 
 - **Parallel Environments**: 40 (adjust based on CPU cores)
-- **Total Timesteps**: 24,000,000
+- **Total Timesteps**: 6,000,000
 - **Learning Rate**: 3e-4
 - **Batch Size**: 2048
 - **N Steps**: 1024
