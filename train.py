@@ -146,7 +146,7 @@ def main():
         name_prefix=save_name
     )
 
-    print(f"\n⚡ Inizio Training! Target: 2.000.000 steps.")
+    print(f"\n⚡ Inizio Training! Target: 6.000.000 steps.")
     print("   (Premi Ctrl+C per fermare e salvare)\n")
     
     try:
