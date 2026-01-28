@@ -19,7 +19,6 @@ policy_kwargs = dict(
         pi=[512, 512, 256], # Actor: 3 layer per gestire la complessità a 360°
         vf=[512, 512, 256]  # Critic: Separato e potente
     ),
-    # gSDE (Generalized State Dependent Exploration)
     # Rende il movimento fluido durante l'esplorazione invece che tremolante
     log_std_init=-2, 
 )
@@ -96,14 +95,13 @@ def main():
             "MlpPolicy", 
             env, 
             verbose=1,
-            device="cuda",              # Usa la tua GTX 1070
+            device="cuda",              # Usa la GPU
             policy_kwargs=policy_kwargs,
     
             # --- PARAMETRI DI TRAINING ---
-            learning_rate=3e-4,         # Standard, va bene
+            learning_rate=3e-4,
     
             # Batch Size: Quanti dati passiamo alla GPU in un colpo solo per l'update.
-            # 2048 o 4096 va bene per la 1070.
             batch_size=2048,            
     
             # N_Steps: Quanti step raccoglie OGNI env prima di fare un update.
@@ -115,12 +113,9 @@ def main():
             gae_lambda=0.95,            # Stabilità del gradiente
     
             # --- IL SEGRETO PER IL 360 GRADI ---
-            ent_coef=0.01,              # Entropy Coefficient (Default è 0.0)
-                                # Forza il robot a provare cose nuove. 
-                                # Se è 0, appena trova il cubo davanti, smette di cercare dietro.
-                                # Mettilo a 0.01 o 0.005.
+            ent_coef=0.01,
     
-            use_sde=True,               # ATTIVA gSDE! (Game changer per bracci robotici)
+            use_sde=True,               # ATTIVA gSDE!
             sde_sample_freq=4,          # Rampiona il rumore ogni 4 step (movimenti più coerenti)
     
             tensorboard_log="./tensorboard_logs/"
