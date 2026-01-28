@@ -19,8 +19,7 @@ policy_kwargs = dict(
         pi=[512, 512, 256], # Actor: 3 layer per gestire la complessità a 360°
         vf=[512, 512, 256]  # Critic: Separato e potente
     ),
-    # Rende il movimento fluido durante l'esplorazione invece che tremolante
-    log_std_init=-2, 
+    log_std_init=0, 
 )
 
 def get_latest_model(log_dir="logs/"):
