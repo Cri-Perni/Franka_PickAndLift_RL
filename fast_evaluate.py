@@ -57,7 +57,6 @@ def run_detailed_evaluation(model_path, num_episodes=100):
     min_rew = np.min(rewards)
     max_rew = np.max(rewards)
     
-    # 5. Output formattato
     print("\n" + "═"*50)
     print(f"📊 REPORT PRESTAZIONI: {model_path}")
     print("═"*50)
