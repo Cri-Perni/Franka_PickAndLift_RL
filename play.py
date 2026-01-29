@@ -16,17 +16,15 @@ def main():
 
     print(f"🧠 Caricamento cervello: {model_name}...")
     
-    # 1. Carica l'ambiente con grafica
     env = FrankaReachEnv(render_mode=True)
     
-    # 2. Carica il modello
+    
     model = PPO.load(model_name)
     
     obs, _ = env.reset()
     print("✅ AVVIO! Guarda la finestra 3D.")
     print("Premi Ctrl+C qui nel terminale per uscire.")
 
-    # Ciclo infinito
     while True:
         # L'AI decide l'azione
         action, _ = model.predict(obs, deterministic=True)
@@ -35,13 +33,13 @@ def main():
         obs, reward, done, _, _ = env.step(action)
         remain =env.max_steps - env.current_step
         
-        # Rallentiamo un po' per goderci la scena (60 FPS circa)
+        # Rallentiamo la scena (60 FPS circa)
         time.sleep(0.016)
         
         if done:
             print(f"Target raggiunto/perso! Reward: {reward:.2f}, Steps remaining: {remain}")
             obs, _ = env.reset()
-            time.sleep(0.5) # Pausa prima del prossimo lancio
+            time.sleep(0.5)
 
 if __name__ == "__main__":
     main()
