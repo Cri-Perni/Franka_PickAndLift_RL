@@ -15,6 +15,16 @@ This project implements a complete RL pipeline for training a Franka Panda robot
 - **Modular Reward System**: Separate components for approach, grasp, lift, and penalties
 - **Genesis Simulation**: High-performance physics engine for robotics
 
+
+
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/4583f4e1-e744-4fd4-821e-8e4bae152566" muted autoplay loop style="max-width: 100%; display: block;">
+  </video>
+</div>
+
+
+
 ## 🏗️ Project Structure
 
 ```
